@@ -1,4 +1,4 @@
-from rest_framework.serializers import SerializerMethodField, ValidationError, CharField, SerializerMethodField
+from rest_framework.serializers import SerializerMethodField, ValidationError, CharField
 
 from helpers.serializers import BaseSerializer
 from helpers.viewsets import get_tokens_for_user

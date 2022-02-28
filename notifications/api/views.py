@@ -1,6 +1,7 @@
-from notifications.api.serializers import NotificationSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
+
+from notifications.api.serializers import NotificationSerializer
 from .. models import Notification
 
 
@@ -8,10 +9,10 @@ class NotificationApiView(APIView):
     serializer_class = NotificationSerializer
 
     def get(self, request):
-        all_notifications = Notification.objects.all().values()
+        notifications = Notification.objects.all().values()
         return Response(
             {'Message': 'List fo notifications',
-             'Notifications List': all_notifications})
+             'Notifications List': notifications})
 
     def post(self, request):
         serializer = NotificationSerializer(data=request.data)
